@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aristotle Hellenic Cyber-Dash</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="hellenic-bg"></div>
+    <div class="dashboard-wrapper">
+        <header class="glass-header">
+            <div class="brand">
+                <span class="pillar-icon">🏛️</span>
+                <h1>LYCEUM <span>INTELLIGENCE</span></h1>
+            </div>
+            
+            <div class="header-actions" style="display: flex; gap: 20px; align-items: center;">
+                <!-- 이전에 만드신 전남대 길라잡이 탭 연동 버튼 -->
+                <a href="file:///C:/Users/User/Desktop/ai/cnu-campus-finder/index.html" target="_blank" style="padding: 10px 20px; background: rgba(212, 175, 55, 0.15); border: 1px solid var(--gold-dim); border-radius: 20px; text-decoration: none; color: var(--gold-primary); font-size: 14px; transition: 0.3s; font-weight: bold; box-shadow: 0 0 10px rgba(0,0,0,0.5);" onmouseover="this.style.transform='scale(1.05)'; this.style.background='rgba(212, 175, 55, 0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.background='rgba(212, 175, 55, 0.15)';">
+                    🗺️ JNU 캠퍼스 길라잡이 열기
+                </a>
+
+                <div class="quote-ticker">
+                    <span id="quote-display">"로딩 중..."</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="grid-layout">
+            <!-- Left Col: Ancient Metrics -->
+            <aside class="metrics-col">
+                <div class="glass-card metric-card" id="card-records">
+                    <h3>총찰 문헌 수</h3>
+                    <div class="val gold-text" id="val-records">0</div>
+                    <div class="sub">스크롤 및 파피루스 환산</div>
+                </div>
+                <div class="glass-card metric-card" id="card-depth">
+                    <h3>철학적 심도 (Depth)</h3>
+                    <div class="val" id="val-depth">0<span class="sm">%</span></div>
+                    <div class="sub">연역/귀납 논리 밀도</div>
+                </div>
+                <div class="glass-card metric-card" id="card-unique">
+                    <h3>어휘 다양성</h3>
+                    <div class="val" id="val-unique">0</div>
+                    <div class="sub">고대 그리스어 등 고유 명사</div>
+                </div>
+            </aside>
+
+            <!-- Center Col: Philosophical Ontology -->
+            <section class="ontology-col">
+                <div class="glass-card tall-card">
+                    <div class="card-head">
+                        <h2>존재론적 관계성 (사물과 형상)</h2>
+                        <div class="pulse-indicator"></div>
+                    </div>
+                    <div class="ontology-network" id="ontology-graph">
+                        <!-- JS 렌더링 영역 -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Col: Branches of Philosophy -->
+            <aside class="branches-col">
+                <div class="glass-card tall-card">
+                    <div class="card-head">
+                        <h2>분석된 철학 카테고리 (클릭하여 돋보기)</h2>
+                    </div>
+                    <div class="branches-list" id="branches-list">
+                        <!-- JS 렌더링 영역 -->
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- 숨겨진 상세 설명 모달창 (팝업) -->
+    <div class="modal-overlay" id="detail-modal">
+        <div class="glass-modal">
+            <button class="close-btn" id="close-modal">&times;</button>
+            <h2 id="modal-title" class="gold-text">철학 이름</h2>
+            <div class="modal-content" id="modal-body">
+                해당 철학의 상세한 아리스토텔레스적 정의가 이곳에 표시됩니다.
+            </div>
+        </div>
+    </div>
+
+    <script src="data/dashboard_data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
